@@ -5,16 +5,66 @@ date: '2022-11-29'
 output: html_document
 ---
 
+## Results and Discussion
+
 ```{r}
 library(tidyverse)
+library(ggplot2)
 library(readxl)
 yt_data <- read_excel("~/Desktop/yt_data.xlsx")
 ```
 
 ```{r}
-yt_data %>% count(candidate_support)
+yt_data_L <- filter(yt_data, starting_video == "L")
+yt_data_R <- filter(yt_data, starting_video == "R")
+```
+
+```{r}
+yt_data_L %>% count(candidate_support)
+```
+
+```{r}
+yt_data_R %>% count(candidate_support)
+```
+
+```{r}
+yt_data_L2 <- yt_data_L %>%
+  group_by(cold_start) %>%
+  summarize(
+    political_index = mean(candidate_support)
+  )
+```
+
+```{r}
+yt_data_R2 <- yt_data_R %>%
+  group_by(cold_start) %>%
+  summarize(
+    political_index = mean(candidate_support)
+  )
 ```
 
 
+```{r}
+yt_data_index <- yt_data %>%
+  group_by(cold_start) %>%
+  group_by(starting_video) %>%
+  summarize(
+    political_index = mean(candidate_support)
+  )
+```
+
+```{r}
+yt_data2 <- yt_data %>%
+  rename(Index = candidate_support)
+
+yt_data2$Index <- as.character(yt_data2$Index)
+```
+
+
+```{r}
+video_plot <- ggplot(data = yt_data2, aes(x = starting_video, fill = Index)) + xlab("Political leaning of starting video") +
+ylab("Count") + geom_bar(position = "stack") + scale_fill_manual(values = c("cadetblue2", "khaki2", "coral1")) + theme_classic()
+video_plot
+```
 
 
