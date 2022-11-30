@@ -357,6 +357,55 @@ display: none;
 </div>
 
 
+<div id="data-collection-and-methodology" class="section level2">
+<h2>Data Collection and Methodology</h2>
+<ol style="list-style-type: decimal">
+<li><p>To evaluate YouTube’s recommendation algorithm, we first selected
+two videos that would serve as “starting points” for our analysis of
+recommended content. Since this study focuses on YouTube’s algorithmic
+bias in the context of the 2022 midterm elections, we selected videos
+commenting on a 2022 debate between two candidates for U.S. Senate in a
+key state (Pennsylvania), John Fetterman (D), who had criticized
+election conspiracy theories (Sharma, 2020), and Mehmet Oz (R), who had
+“raised questions” about said election fraud claims (FiveThirtyEight
+Staff, 2022). One video would come from a left-leaning news source
+(MSNBC), and the other from a right-leaning news source (Fox News)
+(Mitchell et al., 2014).</p></li>
+<li><p>To understand how the video recommendation algorithm works, we
+created a sample of 24 “cold starts,” or recommendation chains that
+would follow from each starting video described above; 12 recommendation
+chains would follow from the MSNBC source, and 12 recommendation chains
+would follow from the Fox News source. For each cold start, we utilized
+private browsing with deleted history and cookies in order to exclude
+any preexisting political leanings.</p></li>
+<li><p>We then tested the recommendation algorithm by watching 6 videos
+after viewing the starting video for each cold start, choosing the first
+video on the recommendation panel after watching the previous content
+for 10 minutes. We watched 144 videos in total.</p></li>
+<li><p>Similarly to Ribeiro et al. (2022) and Ledwich and Zaitsev
+(2022), we collected data by watching and manually labeling each video.
+For the purpose of this study, we created two measures: 1) support for
+candidates, public figures, organizations, movements, or other entities
+in favor of election fraud conspiracy theories and 2) support for claims
+in favor of election fraud conspiracy theories. Based on content, title,
+and author, we labeled each of the videos as follows (for the previously
+described two measures separately): 1) <strong>1</strong> for videos
+<em>supporting</em> candidates/entities or claims in favor of election
+fraud conspiracy theories, 2) <strong>0</strong> for videos
+<em>neutral</em> towards candidates/entities or claims in favor of
+election fraud conspiracy theories, and 3) <strong>-1</strong> for
+videos <em>criticizing</em> candidates/entities or claims in favor of
+election fraud conspiracy theories. Bisbee et al. (2022) similarly used
+election fraud claims to evaluate videos, yet, unlike our study, their
+research utilized survey data on participants’ political leanings (who
+acted as users), and the users watched a “seed of videos” rather than
+one as a starting point.</p></li>
+<li><p>We further utilize exploratory data visualizations and
+descriptive statistics in order to measure video support for
+election-denying claims between recommendation chains that followed from
+sources with different political leanings.</p></li>
+</ol>
+</div>
 <div id="results-and-discussion" class="section level2">
 <h2>Results and Discussion</h2>
 <p>We begin our initial investigation by conducting exploratory data
