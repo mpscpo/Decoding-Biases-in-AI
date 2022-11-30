@@ -153,4 +153,4 @@ yt_data_candidate_index
 yt_data_claim_index
 ```
 
-As such, the overall results appear to mixed and thus did not produce enough evidence to support the claim that the YouTube recommendation algorithm steers its users towards far-right content, defined as content supporting candidates or claims in favor of election fraud conspiracy theories,  more aggressively than it does towards content criticizing said theories. In fact, the results appear to be more suggestive of the opposite.
+As such, the overall results appear to be mixed and thus did not produce enough evidence to support the claim that the YouTube recommendation algorithm steers its users towards far-right content, defined as content supporting candidates or claims in favor of election fraud conspiracy theories,  more aggressively than it does towards content criticizing said theories. In fact, the results appear to be more suggestive of the opposite.
