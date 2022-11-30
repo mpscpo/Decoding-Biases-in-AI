@@ -153,4 +153,16 @@ yt_data_candidate_index
 yt_data_claim_index
 ```
 
+Finally, **more than half** of the recommendation chains that followed from the right-leaning starting video began showing more neutral content *after* showing one, two, or three videos supporting candidates/entities denying the legitimacy of election results. An example of one such recommendation chain can be seen below.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
+# Loading dataset
+extracted_yt_data_sample1 <- read_excel("~/Desktop/extracted_yt_data_sample1.xlsx")
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Displaying dataset
+extracted_yt_data_sample1
+```
+
 As such, the overall results appear to be mixed and thus did not produce enough evidence to support the claim that the YouTube recommendation algorithm steers its users towards far-right content, defined as content supporting candidates or claims in favor of election fraud conspiracy theories,  more aggressively than it does towards content criticizing said theories. In fact, the results appear to be more suggestive of the opposite.
