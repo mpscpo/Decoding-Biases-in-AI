@@ -7,28 +7,62 @@ output: html_document
 
 ## Results and Discussion
 
-```{r}
+We begin our initial investigation by conducting exploratory data analysis, where we visualize how *all* videos combined that followed from a left-leaning starting point compare to those associated with a right-leaning starting point, regardless of the position in the recommendation chain.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
+# Loading libraries
 library(tidyverse)
 library(ggplot2)
 library(readxl)
+# Loading dataset
 yt_data <- read_excel("~/Desktop/yt_data.xlsx")
 ```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
+# Re-coding data
+yt_data_candidate <- yt_data %>%
+  rename(Index = candidate_support)
+yt_data_candidate$Index <- as.character(yt_data_candidate$Index)
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Visualizing data
+video_plot_candidate <- ggplot(data = yt_data_candidate, aes(x = starting_video, fill = Index)) + xlab("Political leaning of starting video") + ylab("Count") + labs(title = "Figure 1: Video support for election-denying candidates/entities, by starting point") + geom_bar(position = "stack") + scale_fill_manual(values = c("cadetblue2", "khaki2", "coral1")) + theme_classic()
+video_plot_candidate
+```
+
+As Figure 1. above shows, the number of videos *criticizing* election deniers (coded as -1) produced by the left-leaning starting point is greater than the number of videos *supporting* election deniers (coded as 1) that followed from the right-leaning starting point. Further, the proportion of neutral videos (coded as 0) appears to be greater for the right-leaning starting video than the left-leaning starting video, suggesting that more conservative content is *less* likely to steer the users towards videos supporting election deniers than the more liberal content is towards videos supporting election *non*-deniers; this pattern is also similar for videos that directly support or criticize election fraud conspiracy theories, as presented in Figure 2. below.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
+# Re-coding data
+yt_data_claim <- yt_data %>%
+  rename(Index = claim_support)
+yt_data_claim$Index <- as.character(yt_data_claim$Index)
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Visualizing data
+video_plot_claim <- ggplot(data = yt_data_claim, aes(x = starting_video, fill = Index)) + xlab("Political leaning of starting video") + ylab("Count") + labs(title = "Figure 2: Video support for election-denying claims, by starting point") + geom_bar(position = "stack") + scale_fill_manual(values = c("cadetblue2", "khaki2", "coral1")) + theme_classic()
+video_plot_claim
+```
+
+As shown above, the number of videos supporting election-denying claims that followed from the right-leaning starting point is substantially smaller than the proportion of videos criticizing election-denying claims that followed from the left-leaning starting point, further indicating that left-leaning content, rather than right-leaning content, might be more likely to produce biased videos.
+
+This initial analysis, however, does not take into account differences between recommendation chains. For this reason, it might be helpful to evaluate how the results compare between different "cold starts."
+
+
+
+
+
 
 ```{r}
 yt_data_L <- filter(yt_data, starting_video == "L")
 yt_data_R <- filter(yt_data, starting_video == "R")
 ```
 
-```{r}
-yt_data_L %>% count(candidate_support)
-```
 
 ```{r}
-yt_data_R %>% count(candidate_support)
-```
-
-```{r}
-yt_data_L2 <- yt_data_L %>%
+yt_data_L <- yt_data_L %>%
   group_by(cold_start) %>%
   summarize(
     political_index = mean(candidate_support)
@@ -36,7 +70,7 @@ yt_data_L2 <- yt_data_L %>%
 ```
 
 ```{r}
-yt_data_R2 <- yt_data_R %>%
+yt_data_R <- yt_data_R %>%
   group_by(cold_start) %>%
   summarize(
     political_index = mean(candidate_support)
@@ -53,18 +87,6 @@ yt_data_index <- yt_data %>%
   )
 ```
 
-```{r}
-yt_data2 <- yt_data %>%
-  rename(Index = candidate_support)
 
-yt_data2$Index <- as.character(yt_data2$Index)
-```
-
-
-```{r}
-video_plot <- ggplot(data = yt_data2, aes(x = starting_video, fill = Index)) + xlab("Political leaning of starting video") +
-ylab("Count") + geom_bar(position = "stack") + scale_fill_manual(values = c("cadetblue2", "khaki2", "coral1")) + theme_classic()
-video_plot
-```
 
 
