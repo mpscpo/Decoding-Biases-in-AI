@@ -8,11 +8,11 @@ output: html_document
 
 ## Introduction
 
-The American polity is more polarized than ever, and more digitalized too. On one measurement of polarization, voters in the United States are now 56 points "colder" in sentiment towards supporters of opposing parties than supporters of their own, up from 27 points in 1978 (The Economist, 2021). Simultaneously, the number of American adults who "use the internet" has soared from 52% in 2000 to 93% in 2021 (Pew Research Center, 2021). This concurrence begs a classic question of "correlation or causation." More specifically, policy pundits are debating whether the increasing concentration of political and social life online has created polarization anew in the US, or whether it is simply playing host to an independent social trend. This question forms the broad focus of our investigation. 
+The American polity is more polarized than ever, and more digitalized too. On one measurement of polarization, voters in the United States are now 56 points "colder" in sentiment towards supporters of opposing parties than supporters of their own, up from 27 points in 1978 (The Economist, 2021). Simultaneously, the number of American adults who "use the internet" has soared from 52% in 2000 to 93% in 2021 (Pew Research Center, 2021). This concurrence begs a classic question of "correlation or causation." More specifically, policy pundits are debating whether the increasing concentration of political and social life online has created polarization anew in the U.S., or whether it is simply playing host to an independent social trend. This question forms the broad focus of our investigation. 
 
 Digitalization is a multifaceted phenomena with many elements, but one aspect of particular interest to the context of polarization is recommendation algorithms. These algorithms feature across the online world, on e-commerce websites, digital newspapers, social media, and more. While they diverge in their technical constitution, they each share a primary intention: to retain and shape user engagement by directing users to particular content (Covington et al., 2016). Given their key role in mediating the user experience online, recommendation algorithms are an appropriate object through which we can attempt to identify a potential causal relationship between digitalization and political polarization. 
 
-For the sake of brevity, this paper narrows its focus to YouTube’s recommendation algorithm as a source of insight into the broader universe of online recommendation algorithms. This approach is informed by YouTube’s prominence as a source of political information online, and its significant user base (English, et al., 2011). 
+For the sake of brevity, this paper narrows its focus to YouTube’s recommendation algorithm as a source of insight into the broader universe of online recommendation algorithms. This approach is informed by YouTube’s prominence as a source of political information online, and its significant user base (English et al., 2011). 
 
 Our research requires a point of orientation around which we can code recommended YouTube content as “polarizing” or “non-polarizing”. Polarization, as a concept, is inherently fluid and depends on the opinions or perspectives considered particularly divisive for a given society at a given time. Given that our research is focused on the American context, we have opted to code YouTube content as “polarizing” or “non-polarizing” based on its relationship to the ongoing debate over election integrity. Belief in the legitimacy and integrity of America’s election system is much higher among Democratic voters than Republican voters, and hence, disagreement in this space is currently a pertinent force behind polarization (Grant et al., 2021). Further, data analytics organization FiveThirtyEight identifies this debate as a key point of radicalization within the Republican Party, where Republicans are now judged as moderate or radical based on their support for Donald Trump’s accusations of voter fraud (2022). Our investigation is thereby concerned with whether YouTube's algorithm is directing users towards more radical right-wing content, as defined by support for political candidates, figures, organizations, and movements that openly favor conspriacy theories supporting election denial.
 
@@ -27,7 +27,7 @@ Existing research on the polarizing effects of YouTube’s recommendation algori
 
 ## Data Collection and Methodology
 
-1) To evaluate YouTube's recommendation algorithm, we first selected two videos that would serve as "starting points" for our analysis of recommended content. Since this study is interested in polarization as it relates to ongoing political divisions in the US over election integrity, we selected videos commenting on a 2022 debate between two candidates for U.S. Senate in a key state of Pennsylvania: John Fetterman (D), who had criticized election conspiracy theories (Sharma, 2020), and Mehmet Oz (R), who had "raised questions" about the integrity of America's electoral system (FiveThirtyEight Staff, 2022). One video came from a left-leaning news source (MSNBC), and the other from a right-leaning news source (Fox News) (Mitchell et al., 2014).
+1) To evaluate YouTube's recommendation algorithm, we first selected two videos that would serve as "starting points" for our analysis of recommended content. Since this study is interested in polarization as it relates to ongoing political divisions in the U.S. over election integrity, we selected videos commenting on a 2022 debate between two candidates for U.S. Senate in a key state of Pennsylvania: John Fetterman (D), who had criticized election conspiracy theories (Sharma, 2020), and Mehmet Oz (R), who had "raised questions" about the integrity of America's electoral system (FiveThirtyEight Staff, 2022). One video came from a left-leaning news source (MSNBC), and the other from a right-leaning news source (Fox News) (Mitchell et al., 2014).
 
 2) To understand how the video recommendation algorithm works, we created a sample of 24 "cold starts," or recommendation chains that followed from each starting video described above; 12 recommendation chains followed from the MSNBC source, and 12 recommendation chains followed from the Fox News source. For each cold start, we utilized private browsing with deleted history and cookies in order to exclude any preexisting personalization data from inputting or otherwise affecting the behavior of the recommendation algorithm.
 
@@ -56,6 +56,7 @@ yt_data_candidate <- yt_data %>%
   rename(Index = candidate_support)
 yt_data_candidate$Index <- as.character(yt_data_candidate$Index)
 ```
+
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Visualizing data
@@ -198,3 +199,37 @@ extracted_yt_data_sample1
 ```
 
 As such, the overall results appear to be mixed and thus did not produce enough evidence to support the claim that the YouTube recommendation algorithm steers its users towards far-right content, defined as content supporting candidates or claims in favor of election fraud conspiracy theories,  more aggressively than it does towards content criticizing said theories. In fact, the results appear to be more suggestive of the opposite.
+
+## References
+
+Bisbee, J. et al. (2022). Election Fraud, YouTube, and Public Perception of the Legitimacy of President Biden. *Journal of Online Trust & Safety,* 1(3).
+
+Covington P., Adams J., and Sargin E. (2016). Deep Neural Networks for Youtube Recommendation. *Association for Computing Machinery.*
+
+FiveThirtyEight Staff. (2022, November 8). 60 Percent Of Americans Will Have An Election Denier On The Ballot This Fall. *FiveThirtyEight.*
+
+Grant, M. et al. (2021). When election expectations fail: Polarized perceptions of election legitimacy increase with accumulating evidence of election outcomes and with polarized media. *PLoS ONE,* 16(12).
+
+Haroon, M. et al. (2022). YouTube, The Great Radicalizer? Auditing and Mitigating Ideological Biases in YouTube Recommendations. *arXiv.*
+
+Ledwich, M. and Zaitsev, A. (2020). Algorithmic extremism: Examining YouTube’s rabbit hole of radicalization. *First Monday,* 25(3). 
+
+Mitchell, A. (2014, October 21). Political Polarization & Media Habits. *Pew Research Center.*
+
+Pew Research Center. (2021, 7 April).  Internet/Broadband Fact Sheet. *Pew Research Center.*
+
+Ribeiro, M. et al. (2021). Auditing Radicalization Pathways on YouTube. *arXiv.*
+
+Sharma, V. (2020, November 23). “Like A Dumb And Dumber Movie”: Top Pennsylvania Official Debunks Trump’s Baseless Voter Fraud Claims. *NowThis News.*
+
+The Economist. (2021, October 5). Is political polarisation in America really rising? *The Economist.*
+
+Yesilda, M. and Lewandowksy, S. (2022). Systematic review: YouTube recommendations and problematic content. *Internet Policy Review,* 11(1).
+
+
+
+
+
+
+
+
