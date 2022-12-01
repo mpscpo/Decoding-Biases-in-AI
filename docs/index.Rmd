@@ -217,7 +217,7 @@ However, our findings do not exclude the existence of polarizing effects in YouT
 
 3) *Algorithmic opacity:* Ultimately, we were unable to analyze the code of YouTube’s recommendation algorithm, which is perhaps the largest limitation to this study, as there could be a significant aspect of randomness to the recommendations especially considering that the law of big numbers do not apply to our limited sample.
 
-As such, future research on YouTube's recommendation algorithm, particularly in relation to ideological radicalism, could potentially benefit from a larger sample and greater diversity of materials and/or actions.
+As such, future research on YouTube's recommendation algorithm, particularly in relation to ideological radicalism, could potentially benefit from broadening the scope of materials consulted and expanding relevant sample size. Platforms such as YouTube process terabytes' worth of data, and hence, by expanding sample size and utilizing more information, future studies could be more successful in detecting possible ideological biases.
 
 ## References
 
