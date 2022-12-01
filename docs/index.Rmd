@@ -1,6 +1,6 @@
 ---
-title: "TITLE"
-subtitle: "Decoding Biases in AI: Group Project"
+title: "Analyzing YouTube's Recommendation Algorithm's Bias"
+subtitle: "Decoding Biases in AI: Final Project"
 author: "Tom Akhurst, Marcelina Przespolewska, Aahil Sheikh, James Purnomo"
 date: 'December 2, 2022'
 output: html_document
@@ -16,30 +16,31 @@ For the sake of brevity, this paper narrows its focus to YouTube’s recommendat
 
 Our research requires a point of orientation around which we can code recommended YouTube content as “polarizing” or “non-polarizing." Polarization, as a concept, is inherently fluid and depends on the opinions or perspectives considered particularly divisive for a given society at a given time. Given that our research is focused on the American context, we have opted to evaluate the YouTube algorithm based on its relationship to the ongoing debate over election integrity. Belief in the legitimacy and integrity of America’s election system is much higher among Democratic voters than Republican voters, and hence, disagreement in this space is currently a pertinent force behind polarization (Grant et al., 2021). Equally important, data analytics organization FiveThirtyEight identifies this debate as a key point of radicalization within the Republican Party, where Republicans are now judged as "moderate" or "radical," or "non-polarizing" and "polarizing," based on their support for Donald Trump’s accusations of voter fraud (2022).
 
-In light of these political debates on polarization and radicalism, we are inspired to test whether YouTube's recommendation algorithm produces a "system-wide ideological bias," which Brown et al. (2022) define as a "bias in the overall recommendations of the majority of users [...] *in a particular ideological direction*," in favor of election denialism. As such, our study is concerned with whether YouTube's algorithm produces bias in a way that it systematically directs users towards more radical, and thus more polarizing, right-wing content, as defined by support for political candidates, figures, organizations, and movements that openly favor conspiracy theories supporting election denial. Our investigation is thereby directed by the following research question: how aggressively does the YouTube’s recommendation algorithm lead users towards more polarizing right-wing content, when the algorithm is deprived of personalization data?
+In light of these political debates on polarization and radicalism, we are inspired to test whether YouTube's recommendation algorithm produces a "system-wide ideological bias," which Brown et al. (2022) define as a "bias in the overall recommendations of the majority of users [...] *in a particular ideological direction*," in favor of right-wing extremism, defined as election denialism for the purpose of this study. As such, our investigation is concerned with whether YouTube's algorithm produces bias in a way that it systematically directs users towards more radical, and thus more polarizing, right-wing content, as defined by support for political candidates, figures, organizations, and movements that openly favor conspiracy theories supporting election denial. Our investigation is thereby directed by the following research question: how aggressively does the YouTube recommendation algorithm lead users towards more polarizing right-wing content, when the algorithm is deprived of personalization data?
 
 ## Literature Review
 
-Prior research on YouTube’s recommendation algorithm and its role in steering users towards more extreme content is relatively inconsistent. Yesilada and Lewandowsky (2022) conducted a review of existing research on YouTube’s recommendation system and found that around 60% of studies implicated YouTube’s algorithm in radicalization, while 30% produced mixed results, and less than 10% did not implicate the algorithm. Among those studies that identified a positive association, Haroon et al. (2022) attempted to audit YouTube’s recommendation system for both right-wing and left-wing radicalization and found that YouTube encourages far-right content to a greater extent than far-left content. Ribeiro et al. (2022) similarly argued that YouTube’s algorithm encourages radicalization among users, and that its recommendation system enables polarizing channels “to be discovered, even in a scenario without personalization.” Bisbee et al. (2022) found that YouTube’s algorithm promotes radicalization of political views, as users skeptical of the legitimacy of the 2020 presidential election were more likely to be provided with radicalized content. However, there also exist studies that dispute these claims of polarizing effects from YouTube’s recommendation algorithm - this includes research by Ledwich and Zaitsev (2020), which found that YouTube’s recommendation system disfavors radicalizing content.
+Prior research on YouTube’s recommendation algorithm and its role in steering users towards more ideologically radicalized content is relatively inconsistent. Yesilada and Lewandowsky (2022) conducted a review of existing research on YouTube’s recommendation system and found that around 60% of studies implicated YouTube’s algorithm in ideological radicalization, while 30% produced mixed results, and less than 10% did not implicate the algorithm. Among those studies that identified a positive association, Haroon et al. (2022) attempted to audit YouTube’s recommendation system for both right-wing and left-wing radicalization and found that YouTube encourages far-right content to a greater extent than far-left content. Ribeiro et al. (2022) similarly argued that YouTube’s algorithm encourages radicalization among users, and that its recommendation system enables polarizing channels “to be discovered, even in a scenario without personalization.” Bisbee et al. (2022) found that YouTube’s algorithm promotes radicalization of political views, as users skeptical of the legitimacy of the 2020 presidential election were more likely to be provided with radicalized content. However, there also exist studies that dispute these claims of polarizing effects from YouTube’s recommendation algorithm - this includes research by Ledwich and Zaitsev (2020), which found that YouTube’s recommendation system disfavors radicalizing content.
 
 Existing research on the polarizing effects of YouTube’s recommendation algorithm has been far from homogeneous in its methodology. Haroon et al. (2022), for example, trained artificial entities to watch a series of selected left-leaning and right-leaning videos, which were assigned to a score ranging from -1 (far-left) and to +1 (far-right) based on the ratio of accounts sharing the video. Ribeiro et al. (2022) manually assigned channels to chosen communities, such as “Alt-lite,” after watching each channel. Ledwich and Zaitsev (2020) similarly labeled content by watching channels “until the labelers found enough evidence for assigning specific labels.” Bisbee et al. (2022) “used unsupervised topic models of the video metadata (title, description, and video tags) to characterize the content of the recommended videos shown to [the] respondents”; they classified the content by using both Latent Dirichelet Allocation (LDA) and manual allocation, where they assigned labels based on whether each video was supportive of election fraud claims.
 
+Considering the multitude of inconsistencies in research findings on YouTube's recommendation algorithm, decoding ideological biases in its operation remains a challenge. Our goal is to ultimately contribute to the existing literature on ideological radicalization stemming from said algorithm.
 
 ## Data Collection and Methodology
 
-1) To evaluate YouTube's recommendation algorithm, we first selected two videos that would serve as "starting points" for our analysis of recommended content. Since this study is interested in polarization as it relates to ongoing political divisions in the U.S. over election integrity, we selected videos commenting on a 2022 debate between two candidates for U.S. Senate in a key state of Pennsylvania: John Fetterman (D), who had criticized election conspiracy theories (Sharma, 2020), and Mehmet Oz (R), who had "raised questions" about the integrity of America's electoral system (FiveThirtyEight Staff, 2022). One video came from a left-leaning news source (MSNBC), and the other from a right-leaning news source (Fox News) (Mitchell et al., 2014).
+1) To evaluate the ideological bias stemming from YouTube's recommendation algorithm, we first selected two videos that would serve as "starting points" for our analysis of recommended content. Since this study is interested in radicalization as it relates to ongoing political divisions in the U.S. over election integrity, we selected videos commenting on a 2022 debate between two candidates for U.S. Senate in a key state of Pennsylvania with different views on the topic: John Fetterman (D), who had criticized election conspiracy theories (Sharma, 2020), and Mehmet Oz (R), who had "raised questions" about the integrity of America's electoral system (FiveThirtyEight Staff, 2022). One video came from a left-leaning news source (MSNBC), and the other from a right-leaning news source (Fox News) (Mitchell et al., 2014). Considering that election denialism is predominantly associated today with one political party, we opted for two starting videos from politically different sources in order to account for potential differences.
 
 2) To understand how the video recommendation algorithm works, we created a sample of 24 "cold starts," or recommendation chains that followed from each starting video described above; 12 recommendation chains followed from the MSNBC source, and 12 recommendation chains followed from the Fox News source. For each cold start, we utilized private browsing with deleted history and cookies in order to exclude any preexisting personalization data from inputting or otherwise affecting the behavior of the recommendation algorithm.
 
-3) We tested the recommendation algorithm by watching six videos in succession following from the relevant "cold start" video. Each successive video was selected from the first clip featured in the recommendation panel. Each video was watched for 10 minutes, or otherwise until the clip expired. Our sample of 24 "cold starts," divided into 12 beginning with the MSNBC video and 12 beginning with the Fox News video, collectively amounted to 144 videos watched in total.
+3) We tested the recommendation algorithm by watching six videos in succession following from the relevant "cold start" video. Each successive video was selected from the first clip featured in the recommendation panel. Each video was watched for 10 minutes, or otherwise until the clip expired. Our sample of 24 "cold starts collectively amounted to 144 videos watched in total.
 
 4) Similarly to Ribeiro et al. (2022) and Ledwich and Zaitsev (2022), we collected data by watching and manually labeling each video. For the purpose of this study, we created two measures: 1) support for candidates, public figures, organizations, movements, or other entities in favor of election fraud conspiracy theories and 2) support for claims in favor of election fraud conspiracy theories. Based on content, title, and author, we labeled each of the videos as follows (for the previously described two measures separately): 1) **1** for videos *supporting* candidates/entities or claims in favor of election fraud conspiracy theories, 2) **0** for videos *neutral* towards candidates/entities or claims in favor of election fraud conspiracy theories, and 3) **-1** for videos *criticizing* candidates/entities or claims in favor of election fraud conspiracy theories. Bisbee et al. (2022) similarly used election fraud claims to evaluate videos, yet, unlike our study, their research utilized survey data on participants' political leanings (who acted as users), and the users watched a "seed of videos" rather than one as a starting point.
 
-5) We further utilized exploratory data visualizations and descriptive statistics in order to measure and compare video support for election-denying claims/candidates between different recommendation chains that followed from sources with differing political leanings. 
+5) We further utilized exploratory data visualizations and descriptive statistics in order to measure and compare video support for election-denying claims/candidates between different recommendation chains that followed from sources with differing political leanings. We hypothesized that the YouTube algorithm steered its users towards election-denying content more aggressively than it did towards non-election-denying content.
 
 ## Results and Analysis
 
-We began our initial investigation with an exploratory data analysis. We created the 72 videos watched in total from the MSNBC cold start, against the 72 videos watched in total from the Fox News cold start. This allowed us to observe whether the starting points had any predictive effect on the volume of radical right-wing content subsequently recommended by algorithm.
+We began our initial investigation with an exploratory data analysis. We first visualized the 72 videos watched in total from the MSNBC cold start, against the 72 videos watched in total from the Fox News cold start. This allowed us to observe whether the starting points had any initial predictive effect on the volume of radical right-wing content subsequently recommended by algorithm.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 # Loading libraries
@@ -57,14 +58,13 @@ yt_data_candidate <- yt_data %>%
 yt_data_candidate$Index <- as.character(yt_data_candidate$Index)
 ```
 
-
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Visualizing data
 video_plot_candidate <- ggplot(data = yt_data_candidate, aes(x = starting_video, fill = Index)) + xlab("Political leaning of starting video") + ylab("Video count") + labs(title = "Figure 1: Video support for election-denying candidates/entities, by starting point") + geom_bar(position = "stack") + scale_fill_manual(values = c("cadetblue2", "khaki2", "coral1")) + theme_classic()
 video_plot_candidate
 ```
 
-As Figure 1. above shows, the number of videos *criticizing* election deniers (coded as -1) produced by the left-leaning starting point is greater than the number of videos *supporting* election deniers (coded as 1) that followed from the right-leaning starting point. Further, the proportion of neutral videos (coded as 0) appears to be greater for the right-leaning starting video than for the left-leaning starting video, suggesting that more conservative content is *less* likely to steer the users towards videos supporting election deniers than the more liberal content is towards videos supporting election *non*-deniers; this pattern is also similar for videos that directly support or criticize election fraud conspiracy theories, as presented in Figure 2. below.
+As Figure 1. above shows, the number of videos *criticizing* election deniers (coded as -1) produced by the left-leaning (MSNBC) starting point is greater than the number of videos *supporting* election deniers (coded as 1) that followed from the right-leaning (Fox News) starting point. Further, the proportion of neutral videos (coded as 0) appears to be greater for the Fox News starting video than for the MSNBC starting video, suggesting that more conservative initial content is *less* likely to steer the users towards videos supporting election deniers than the more liberal initial content is towards videos supporting election *non*-deniers; this pattern is also similar for videos that directly support or criticize election fraud conspiracy theories, as presented in Figure 2. below.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 # Re-coding data
@@ -79,12 +79,11 @@ video_plot_claim <- ggplot(data = yt_data_claim, aes(x = starting_video, fill = 
 video_plot_claim
 ```
 
-As shown above, the number of videos supporting election-denying claims that followed from the right-leaning starting point is substantially smaller than the proportion of videos criticizing election-denying claims that followed from the left-leaning starting point, further indicating that left-leaning content, rather than right-leaning content, might be more likely to produce biased videos.
+As shown above, the number of videos supporting election-denying claims that followed from the Fox News starting point is substantially smaller than the proportion of videos criticizing election-denying claims that followed from the MSNBC starting point, further indicating that left-leaning initial content might be more likely to produce non-election-denying videos than right-leaning initial content is to produce election-denying videos.
 
 This initial analysis, however, does not take into account differences between recommendation chains. For this reason, it might be helpful to evaluate how the results compare between different "cold starts."
 
-The table below presents the mean measure of support for election-denying candidates/entities (which we will call the "candidate index") among different recommendation chains (cold starts) that followed from the left-leaning starting video.
-
+Table 1. below presents the mean measure of support for election-denying candidates/entities (which we will call the "candidate index" for the purpose of this study) among different recommendation chains (cold starts) that followed from the MSNBC starting video.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 # Creating new datasets
@@ -101,12 +100,13 @@ yt_data_L_candidate <- yt_data_L_candidate %>%
   )
 ```
 
+**Table 1: Mean of candidate/entity support (candidate index) for each recommendation chain - MSNBC**
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Displaying left/candidate dataset
 yt_data_L_candidate
 ```
 
-As the table above shows, most recommendation chains generated by the left-leaning starting point and composed of 6 videos, not surprisingly, have the index below 0, indicating that the recommendation algorithm overwhelmingly steered the user clicking through a recommendation chain towards content criticizing election-denying candidates or entities. However, there are some anomalies, such as recommendation chain #1, #4, and #8. The pattern is similar for the mean measure of support for election-denying claims, called "claim index" for the purpose of this study, as presented in the table below.
+As the table above shows, most recommendation chains generated by the left-leaning starting point and composed of 6 videos, not surprisingly, have the index below 0, indicating that the recommendation algorithm overwhelmingly steered the user clicking through a recommendation chain towards content criticizing election-denying candidates or entities. However, there are some anomalies, such as recommendation chain #1, #4, and #8. The pattern is similar for the mean measure of support for election-denying claims, called "claim index" for the purpose of this study, as presented in Table 2. below.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 # Creating new datasets
@@ -123,12 +123,13 @@ yt_data_L_claim <- yt_data_L_claim %>%
   )
 ```
 
+**Table 2: Mean of claim support (claim index) for each recommendation chain - MSNBC**
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Displaying left/claim dataset
 yt_data_L_claim
 ```
 
-The same indexes for recommendation chains that started from the right-leaning starting point, however, show a slightly different pattern, as presented in the two tables below.
+The same indexes for recommendation chains that started from the right-leaning starting point, however, show a slightly different pattern, as presented in Tables 3. and 4. below.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 # Wrangling right/candidate dataset
@@ -139,6 +140,7 @@ yt_data_R_candidate <- yt_data_R_candidate %>%
   )
 ```
 
+**Table 3: Mean of candidate/entity support (candidate index) for each recommendation chain - Fox News**
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Displaying right/candidate dataset
 yt_data_R_candidate
@@ -153,14 +155,15 @@ yt_data_R_claim <- yt_data_R_claim %>%
   )
 ```
 
+**Table 4: Mean of claim support (claim index) for each recommendation chain - Fox News**
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Displaying right/claim dataset
 yt_data_R_claim
 ```
 
-Here, all recommendation chains composed of 6 videos that followed from the right-leaning starting point have the mean support for election-denying candidates/entities above 0, indicating that, overall, these chains, unlike those for left-leaning starting point, might have produced more biased content. For election-denying claims, however, the right-leaning video-produced chains appear to be more neutral, with many chains having the claim index of 0. 
+Here, all recommendation chains composed of 6 videos that followed from the Fox News starting point have the mean support for election-denying candidates/entities above 0, indicating that, overall, these chains, unlike those for the MSNBC starting point, might have produced more biased content. For election-denying claims, however, the Fox News video-produced chains appear to be more neutral, with many chains having the claim index of 0. 
 
-However, when we average all recommendation chain indexes for left-leaning and right-leaning starting points, separately, the results show that chains originating from the left-leaning starting video have roughly the same index as chains originating from the right-leaning starting video in absolute terms. The claim index average remains slightly higher for the left-leaning starting point, again, in absolute terms.
+However, when we average all recommendation chain indexes for left-leaning and right-leaning starting points, separately, the results show that chains originating from the MSNBC starting video have roughly the same index as chains originating from the Fox News starting video in absolute terms. The claim index average remains slightly higher for the MSNBC starting point, again, in absolute terms.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 # Producing total means
@@ -178,41 +181,53 @@ yt_data_claim_index <- yt_data %>%
   )
 ```
 
+**Table 5: Candidate/entity support: Average of all recommendation chain indexes, by starting point**
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 yt_data_candidate_index
 ```
-
+**Table 6: Claim support: Average of all recommendation chain indexes, by starting point**
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 yt_data_claim_index
 ```
 
-Finally, **more than half** of the recommendation chains that followed from the right-leaning starting video began showing more neutral content *after* showing one, two, or three videos supporting candidates/entities denying the legitimacy of election results. An example of one such recommendation chain can be seen below.
+Finally, **more than half** of the recommendation chains that followed from the Fox News starting video began showing more neutral content *after* showing one, two, or three videos supporting candidates/entities denying the legitimacy of election results. An example of one such recommendation chain can be seen below.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 # Loading dataset
 extracted_yt_data_sample1 <- read_excel("~/Desktop/extracted_yt_data_sample1.xlsx")
 ```
 
+**Table 7: Recommendation chain example, stemming from the Fox News starting point**
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Displaying dataset
 extracted_yt_data_sample1
 ```
 
-As such, the overall results appear to be mixed and thus did not produce enough evidence to support the claim that the YouTube recommendation algorithm steers its users towards far-right content, defined as content supporting candidates or claims in favor of election fraud conspiracy theories,  more aggressively than it does towards content criticizing said theories. In fact, the results appear to be more suggestive of the opposite.
+As such, the overall results appear to be mixed and thus did not produce enough evidence to support the claim that the YouTube recommendation algorithm steers its users towards polarizing (or radical) right-wing content, defined as content supporting candidates or claims in favor of election fraud conspiracy theories, more aggressively than it does towards content criticizing or denying said theories. In fact, the results *appear* to be more suggestive of the opposite.
 
 ## Findings and Conclusion
 
-We found that YouTube's recommendation algorithm does not internalise any observable bias in a way that favours radical right-wing content (as defined by support for election denial theories in our introduction). When comparing the results obtained from both the MSNBC and Fox News samples, there was approximately an equal distribution in the degree to which the algorithm recommended videos that favoured or opposed election denial conspiracies. The most instructive variable was ultimately the starting video. YouTube's algorithm reacted almost equally to the starting video— in the sense that the MSNBC sample was directed towards videos that challenged election denial, while the Fox News sample was directed towards videos that supported election denial. In this limited sense, we can conclude that YouTube's recommendation algorithm is not promoting radical right-wing content. We reject our initial hypothesis that Youtube is worsening polarisation by increasing exposure to election denial content.
+We found that YouTube's recommendation algorithm does not internalize any observable ideological bias in a way that favors radical right-wing content, as defined by support for election denial theories. When comparing the results obtained from both the MSNBC and Fox News samples, there was approximately an equal distribution in the degree to which the algorithm recommended videos that favored or opposed election denial conspiracies. The most instructive variable was ultimately the starting video. YouTube's algorithm reacted almost equally to the starting video — in the sense that the MSNBC sample was directed towards videos that challenged election denial, while the Fox News sample was directed towards videos that supported election denial. In this limited sense, we cannot conclude that YouTube's recommendation algorithm is promoting radical right-wing content. As such, we reject our initial hypothesis that YouTube steered its users towards election-denying content more aggressively than it did towards videos criticizing/denying election fraud theories.
 
-However, our findings do not exclude the existence of polarising effects in YouTube's recommendation algorithm. We can observe that the algorithm tends to group users 
+However, our findings do not exclude the existence of polarizing effects in YouTube's recommendation algorithm, as we can observe that the algorithm tends to recommend videos consistent with the political leanings of starting point. We were also able to identify a number of limitations of our study:
+
+1) *Limited samples:* Clearly, to present more robust findings, this study should have been likely done with more than 24 recommendation chains and 6 clicks a chain. Essentially, the limited sample size puts into question the confidence interval of the findings, which might be quite large, given that one recommendation chain makes up 8.3% (1/12) of the total as 12 recommendation chains were conducted for each video.
+
+2) *Lack of diversity in materials and actions:* This study would have also benefited from a more diverse selection of materials (videos) to serve as starting points, exploring with videos from non-traditional media such as personalities (or commonly known as YouTubers), which could perhaps lead to differing results; adding more videos that focus on other political issues might also impact the findings. Aside from materials, the study limits itself to a certain pattern of clicking as explained above, which might not completely reflect the actions of users on YouTube in a natural environment. However, the choices are made to limit the study to two starting videos (MSNBC and Fox News) to increase the confidence interval of the study given time constraints. 
+
+3) *Algorithmic opacity:* Ultimately, we were unable to analyze the code of YouTube’s recommendation algorithm, which is perhaps the largest limitation to this study, as there could be a significant aspect of randomness to the recommendations especially considering that the law of big numbers do not apply to our limited sample.
+
+As such, future research on YouTube's recommendation algorithm, particularly in relation to ideological radicalism, could potentially benefit from a larger sample and greater diversity of materials and/or actions.
 
 ## References
 
-Brown, M. et al. (2022, October 13). Echo chambers, rabbit holes, and ideological bias: How YouTube recommends content to real users. *Brookings.*
-
 Bisbee, J. et al. (2022). Election Fraud, YouTube, and Public Perception of the Legitimacy of President Biden. *Journal of Online Trust & Safety,* 1(3).
 
+Brown, M. et al. (2022, October 13). Echo chambers, rabbit holes, and ideological bias: How YouTube recommends content to real users. *Brookings.*
+
 Covington P., Adams J., and Sargin E. (2016). Deep Neural Networks for Youtube Recommendation. *Association for Computing Machinery.*
+
+English, K. et al (2011). YouTube-ification of Political Talk: An Examination of Persuasion Appeals in Viral Video. *American Behavioral Scientist,* 55(733).
 
 FiveThirtyEight Staff. (2022, November 8). 60 Percent Of Americans Will Have An Election Denier On The Ballot This Fall. *FiveThirtyEight.*
 
