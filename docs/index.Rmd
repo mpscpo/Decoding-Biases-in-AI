@@ -35,9 +35,9 @@ Existing research on the polarizing effects of YouTube’s recommendation algori
 
 4) Similarly to Ribeiro et al. (2022) and Ledwich and Zaitsev (2022), we collected data by watching and manually labeling each video. For the purpose of this study, we created two measures: 1) support for candidates, public figures, organizations, movements, or other entities in favor of election fraud conspiracy theories and 2) support for claims in favor of election fraud conspiracy theories. Based on content, title, and author, we labeled each of the videos as follows (for the previously described two measures separately): 1) **1** for videos *supporting* candidates/entities or claims in favor of election fraud conspiracy theories, 2) **0** for videos *neutral* towards candidates/entities or claims in favor of election fraud conspiracy theories, and 3) **-1** for videos *criticizing* candidates/entities or claims in favor of election fraud conspiracy theories. Bisbee et al. (2022) similarly used election fraud claims to evaluate videos, yet, unlike our study, their research utilized survey data on participants' political leanings (who acted as users), and the users watched a "seed of videos" rather than one as a starting point.
 
-5) We further utilized exploratory data visualizations and descriptive statistics in order to measure and compare video support for election-denying claims/candidates between different recommendation chains that followed from sources with differing political leanings.
+5) We further utilized exploratory data visualizations and descriptive statistics in order to measure and compare video support for election-denying claims/candidates between different recommendation chains that followed from sources with differing political leanings. 
 
-## Results and Discussion
+## Results and Analysis
 
 We began our initial investigation with an exploratory data analysis. We created the 72 videos watched in total from the MSNBC cold start, against the 72 videos watched in total from the Fox News cold start. This allowed us to observe whether the starting points had any predictive effect on the volume of radical right-wing content subsequently recommended by algorithm.
 
@@ -199,6 +199,12 @@ extracted_yt_data_sample1
 ```
 
 As such, the overall results appear to be mixed and thus did not produce enough evidence to support the claim that the YouTube recommendation algorithm steers its users towards far-right content, defined as content supporting candidates or claims in favor of election fraud conspiracy theories,  more aggressively than it does towards content criticizing said theories. In fact, the results appear to be more suggestive of the opposite.
+
+## Findings and Conclusion
+
+We found that YouTube's recommendation algorithm does not internalise any observable bias in a way that favours radical right-wing content (as defined by support for election denial theories in our introduction). When comparing the results obtained from both the MSNBC and Fox News samples, there was approximately an equal distribution in the degree to which the algorithm recommended videos that favoured or opposed election denial conspiracies. The most instructive variable was ultimately the starting video. YouTube's algorithm reacted almost equally to the starting video— in the sense that the MSNBC sample was directed towards videos that challenged election denial, while the Fox News sample was directed towards videos that supported election denial. In this limited sense, we can conclude that YouTube's recommendation algorithm is not promoting radical right-wing content. We reject our initial hypothesis that Youtube is worsening polarisation by increasing exposure to election denial content.
+
+However, our findings do not exclude the existence of polarising effects in YouTube's recommendation algorithm. We can observe that the algorithm tends to group users 
 
 ## References
 
